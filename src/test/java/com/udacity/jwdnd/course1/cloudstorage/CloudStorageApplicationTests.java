@@ -14,6 +14,11 @@ import org.springframework.boot.web.server.LocalServerPort;
 
 import java.util.concurrent.TimeUnit;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -54,12 +59,12 @@ class CloudStorageApplicationTests {
 
 	}
 
-	@AfterEach
-	public void afterEach() {
-		if (this.driver != null) {
-			driver.quit();
-		}
-	}
+//	@AfterEach
+//	public void afterEach() {
+//		if (this.driver != null) {
+//			driver.quit();
+//		}
+//	}
 
 	@Test
 	public void testUnauthorizedUserAccess()
@@ -119,6 +124,7 @@ class CloudStorageApplicationTests {
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("note-description"))).sendKeys(description);
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("save-button"))).click();
 
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("http://localhost:" + port + "/home");
 
 		wait.until(ExpectedConditions.elementToBeClickable(notesTab)).click();
