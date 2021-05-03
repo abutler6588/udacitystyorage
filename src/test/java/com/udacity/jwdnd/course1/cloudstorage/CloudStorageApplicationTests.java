@@ -175,7 +175,8 @@ class CloudStorageApplicationTests {
 		WebElement credentialsTab = homePage.getCredentialsTab();
 		wait.until(ExpectedConditions.elementToBeClickable(credentialsTab)).click();
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.id("creds-button"))).click();
+//		wait.until(ExpectedConditions.elementToBeClickable(By.id("creds-button"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("btnAddNewCredential"))).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("credential-url"))).sendKeys(url);
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("credential-username"))).sendKeys(username);
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("credential-password"))).sendKeys(password);
