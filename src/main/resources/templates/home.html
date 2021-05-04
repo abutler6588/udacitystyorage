@@ -3,9 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap.min.css}">
-
     <title>Home</title>
 </head>
 <body class="p-3 mb-2 bg-light text-black">
@@ -72,7 +70,6 @@
                         onclick="showNoteModal()" id="btnAddNewNote">
                     + Add a New Note
                 </button>
-
                 <div class="table-responsive">
                     <table class="table table-striped" id="userTable">
                         <thead>
@@ -101,7 +98,6 @@
                         </tbody>
                     </table>
                 </div>
-
                 <div class="modal fade" id="noteModal" tabindex="-1" role="dialog" aria-labelledby="noteModalLabel"
                      aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -143,7 +139,6 @@
                         onclick="showCredentialModal()">
                     + Add a New Credential
                 </button>
-
                 <div class="table-responsive">
                     <table class="table table-striped" th:object="${credentials}" id="credentialTable">
                         <thead>
@@ -174,7 +169,6 @@
                         </tbody>
                     </table>
                 </div>
-
                 <div class="modal fade" id="credentialModal" tabindex="-1" role="dialog"
                      aria-labelledby="credentialModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -207,7 +201,7 @@
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button id="close-button" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 <button id="btnCredentialSaveChanges" type="button" class="btn btn-primary" onclick="$('#credentialSubmit').click();">
                                     Save changes
                                 </button>
@@ -219,11 +213,9 @@
         </div>
     </div>
 </div>
-
 <script th:src="@{/js/jquery-slim.min.js}"></script>
 <script th:src="@{/js/popper.min.js}"></script>
 <script th:src="@{/js/bootstrap.min.js}"></script>
-
 <!--For opening the note modal-->
 <script type="text/javascript">
             // For opening the note modal
@@ -233,7 +225,6 @@
                 $('#note-description').val(noteDescription ? noteDescription : '');
                 $('#noteModal').modal('show');
             }
-
             // For opening the credentials modal
             function showCredentialModal(credentialId, url, username, password) {
                 $('#credential-id').val(credentialId ? credentialId : '');
@@ -242,6 +233,5 @@
                 $('#credential-password').val(password ? password : '');
                 $('#credentialModal').modal('show');
             }
-
 </script>
 </body>
