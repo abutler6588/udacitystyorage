@@ -71,7 +71,7 @@ public class CredentialController {
 
     @GetMapping(value = "/get-credential/{credentialId}")
     public Credential getCredential(@PathVariable Integer credentialId) {
-        return credentialService.getCredentials(credentialId);
+        return credentialService.getCredential(credentialId);
     }
 
     @GetMapping(value = "/delete-credential/{credentialId}")

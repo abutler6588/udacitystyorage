@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller()
 @RequestMapping("/signup")
-public class SignUpController {
+public class SignupController {
 
-    private UserService userService;
+    private final UserService userService;
 
-    public SignUpController(UserService userService) {
+    public SignupController(UserService userService) {
         this.userService = userService;
     }
 

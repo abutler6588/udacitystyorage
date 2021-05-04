@@ -12,6 +12,13 @@
 <div class="container justify-content-center w-25 p-3" style="background-color: #eeeeee; margin-top: 5em;">
     <h1 class="display-5">Login</h1>
     <form th:action="@{/login}" action="#" method="POST">
+
+<!--        code from udacity feedback-->
+
+        <div id="success-msg" th:if="${SuccessMessage} == 'Sign Up Successfully'" class="alert alert-success">
+            You've successfully signed up!
+        </div>
+
         <div class="alert alert-danger">
             Invalid username or password!
         </div>

@@ -25,7 +25,7 @@ public class CredentialService {
         return credentialMapper.getCredentialListings(userId);
     }
 
-    public Credential getCredentials(Integer noteId) {
+    public Credential getCredential(Integer noteId) {
         return credentialMapper.getCredential(noteId);
     }
 
